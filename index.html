@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 5</title>
+</head>
+
+<body>
+    <!--
+
+Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не
+стирать, код с решением задачи пишем под комментарием.
+-->
+
+    <p class="dropdown">Привет :)</p>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+        </button>
+        <div class="menu dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
+
+    <script>
+        "use strict";
+
+        /*
+        1. Ко всем элементам, имеющим класс "dropdown-item" добавить еще один класс
+        "super-dropdown", необходимо использовать методы forEach и querySelectorAll и
+        свойство classList у элементов.
+         */
+
+        console.log('Задача 1');
+        const drpElements = document.querySelectorAll('.dropdown-item');
+        drpElements.forEach(drpElements => drpElements.classList.add('.super-dropdown'));
+        console.log(drpElements);
+
+        /*
+        2. У элемента с классом btn необходимо убрать класс "btn-secondary", если он
+        присутствует у этого элемента, либо добавить, если такого класса у элемента
+        не было.
+         */
+        console.log('Задача 2');
+        const btnElement = document.querySelector('.btn');
+        btnElement.classList.toggle('btn-secondary');
+        console.log(btnElement);
+        /*
+        3. Необходимо удалить класс "dropdown-menu" у элемента, у которого
+        присутствует класс "menu".
+         */
+        console.log('Задача 3');
+        const menuElement = document.querySelector('.menu');
+        menuElement.classList.remove('dropdown-menu');
+        console.log(menuElement);
+
+        /*
+        4. Используя метод insertAdjacentHTML добавьте после div'a с классом
+        "dropdown" следующую разметку:
+          <a href="#">link</a>
+         */
+
+        console.log('Задача 4');
+        const dvDrpElement = document.querySelector('div.dropdown');
+        dvDrpElement.insertAdjacentHTML('afterbegin', '<a href="#">link</a>');
+        console.log(dvDrpElement);
+
+        /*
+        5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
+         */
+
+        console.log('Задача 5');
+        const idElement = document.getElementById('dropdownMenuButton');
+        idElement.id = 'superDropdown';
+        console.log(idElement);
+        /*
+        6. Добавьте атрибут data-dd со значением 3 элементу у которого существует
+        атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
+         */
+
+        console.log('Задача 6');
+        const labelElement = document.querySelector('[aria-labelledby="dropdownMenuButton"]');
+        labelElement.dataset.dd = "3";
+        console.log(labelElement);
+        /*
+        7. Удалите атрибут type у элемента с классом "dropdown-toggle".
+         */
+
+        console.log('Задача 7');
+        const drpToggle = document.querySelector('.dropdown-toggle');
+        drpToggle.removeAttribute('type');
+        console.log(drpToggle);
+    </script>
+</body>
+
+
+</html>
